@@ -19,3 +19,7 @@ def procuraAgenciasBB(prefixo:str) -> str:
         if ws.cell(row=i, column=1).value == prefixo:
             prefixo = ws.cell(row=i, column=2).value
             return prefixo
+
+    if i == ws.max_row:
+        prefixo = 'O prefixo {} não consta na base de dados.'.format(prefixo)
+        return prefixo
